@@ -1,0 +1,12 @@
+フロント開発メモ(Vue)
+Docker使用
+実行環境 node
+言語 typeScript
+フレームワーク　Vue
+
+プロジェクト開発
+vite使用
+npm init vue@3
+
+dockerでネットワークをしようするなら
+docker network create Docker-composeファイルで書いたネットワーク
