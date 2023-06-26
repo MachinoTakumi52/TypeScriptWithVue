@@ -34,7 +34,7 @@ mock-adapter
 テストデータのためのもの
 npm -D install axios-mock-adapter
 
-時と場合によって
+時と場合によって必要になりそうなライブラリ
 vutify
 UIフレームワーク
 npm install vutify
@@ -43,4 +43,10 @@ pinia-plugin-persistedstate
 ページのリロードでstoreのデータが消えてしまわないよう、storeの状態管理を永続化したい時
 npm install pinia-plugin-persistedstate
 
+ホットリロード
+vite.configファイルのdefineConfig関数内に以下を追加 
+  server: {
+    watch: { usePolling: true },
+  },
 
+TODO:フォルダ構成
