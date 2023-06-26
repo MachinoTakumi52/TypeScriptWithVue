@@ -4,9 +4,43 @@ Docker使用
 言語 typeScript
 フレームワーク　Vue
 
+dockerでネットワークを使用するなら
+docker network create Docker-composeファイルで書いたネットワーク
+
 プロジェクト開発
 vite使用
 npm init vue@3
 
-dockerでネットワークをしようするなら
-docker network create Docker-composeファイルで書いたネットワーク
+以下のようにしてプロジェクト作成
+✔ Project name: … process-progress-monitoring-front
+✔ Add TypeScript? … Yes
+✔ Add JSX Support? …  Yes
+✔ Add Vue Router for Single Page Application development? … Yes
+✔ Add Pinia for state management? …  Yes
+✔ Add Vitest for Unit Testing? … No 
+✔ Add an End-to-End Testing Solution? › No
+✔ Add ESLint for code quality? … No 
+
+ライブラリインストール
+npm i
+
+
+追加使用ライブラリ
+axios
+非同期通信ライブラリ
+npm install axios
+
+mock-adapter
+テストデータのためのもの
+npm -D install axios-mock-adapter
+
+時と場合によって
+vutify
+UIフレームワーク
+npm install vutify
+
+pinia-plugin-persistedstate
+ページのリロードでstoreのデータが消えてしまわないよう、storeの状態管理を永続化したい時
+npm install pinia-plugin-persistedstate
+
+
