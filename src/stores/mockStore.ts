@@ -26,6 +26,6 @@ export const useMockStore = defineStore(
     const mock = ref<MockAdapter | null>(null);
 
     return { mock };
-  },
-  { persist: true }
+  }
+  // { persist: true }
 );

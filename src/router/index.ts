@@ -1,17 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
 
+const newLocal = "../views/home.vue";
+const newLocal_1 = "../views/sample.vue";
+//ルーティング
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
       name: "home",
-      component: () => import("../views/home.vue"),
+      component: () => import(newLocal),
     },
     {
       path: "/sample",
       name: "sample",
-      component: () => import("../views/sample.vue"),
+      component: () => import(newLocal_1),
     },
   ],
 });
