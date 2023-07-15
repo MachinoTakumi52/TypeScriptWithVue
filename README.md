@@ -1,4 +1,4 @@
-# vue(TypeScript)開発するためのテンプレート
+# vue(TypeScript)開発にあたって
 ## もくじ
 - [開発環境](#開発環境)
   - Docker
@@ -9,11 +9,11 @@
 - [プロジェクト作成](#プロジェクト作成について)
   - 必要最低限インストールしたものについて
 - [必要によってインストールすべきライブラリ](#必要によってインストールすべきライブラリ)
-  - 非同期通信ライブラリ axios
-  - フロントテストライブラリ mock-adapter
-  - UIフレームワーク vuetify
-  - piniaプラグイン pinia-plugin-persistedstate
-  - 日付フォーマット day.js
+  - 非同期通信ライブラリ `axios`
+  - フロントテストライブラリ `mock-adapter`
+  - UIフレームワーク `vuetify`
+  - piniaプラグイン `pinia-plugin-persistedstate`
+  - 日付フォーマット `day.js`
 - [フォルダ構成](#フォルダ構成)
 - [開発に必要なコマンドについて](#開発に必要なコマンドについて)
   - ライブラリのインストール
@@ -74,27 +74,27 @@ vite `4.3.9`
 >詳しくは[vue](https://router.vuejs.org/guide/)の公式サイトへ
 
 ## 必要によってインストールすべきライブラリ
-### 非同期通信ライブラリ axios
+### 非同期通信ライブラリ `axios`
 axiosライブラリを使用することでより簡単に非同期通信が可能になる
 ```bash 
 npm install axios
 ```
-### フロントテストライブラリ mock-adapter
+### フロントテストライブラリ `mock-adapter`
 ユニットテストを行うまでは、mockを使用して擬似データを作成し開発を行う
 ```bash 
 npm -D install axios-mock-adapter
 ```
-### UIフレームワーク vuetify
+### UIフレームワーク `vuetify`
 UIがより簡単に構築できる
 ```bash 
 npm install vutify
 ```
-### piniaプラグイン pinia-plugin-persistedstate
+### piniaプラグイン `pinia-plugin-persistedstate`
 ページのリロードでstoreのデータが消えてしまわないよう、storeの状態管理を永続化したい時に使用
 ```bash 
 npm install pinia-plugin-persistedstate
 ```
-### 日付フォーマット day.js
+### 日付フォーマット `day.js`
 日付のフォーマットを詳細に設定したい時使用
 ```bash 
 npm install dayjs
