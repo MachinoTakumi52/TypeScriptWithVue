@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  node-ts-vue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/node-ts-vue:cached
+    tty: true
+    networks:
+      - node-ts-vue-network
+networks:
+  node-ts-vue-network:
+    external: true

@@ -1,0 +1,84 @@
+フロント開発メモ(Vue)
+Docker使用
+実行環境 node
+言語 typeScript
+フレームワーク　Vue
+
+dockerでネットワークを使用するなら
+docker network create Docker-composeファイルで書いたネットワーク
+
+プロジェクト開発
+vite使用
+npm init vue@3
+
+以下のようにしてプロジェクト作成
+プロジェクト名設定
+✔ Project name: … process-progress-monitoring-front
+TypeScriptを使用するか
+✔ Add TypeScript? … Yes
+JSXを使用するか
+✔ Add JSX Support? …  Yes
+//ルーターを使用するか
+✔ Add Vue Router for Single Page Application development? … Yes
+//piniaを使用すか
+✔ Add Pinia for state management? …  Yes
+//ユニットテストを使用するか
+✔ Add Vitest for Unit Testing? … No 
+E2Eテスト(システム全体を通したテスト)を使用するか
+✔ Add an End-to-End Testing Solution? › No
+EsLinst(静的解析ツール)を使用するか
+✔ Add ESLint for code quality? … No 
+
+ライブラリインストール
+npm i
+
+
+追加ライブラリ
+axios
+非同期通信ライブラリ
+npm install axios
+
+mock-adapter
+フロントでのテストのために使用
+DBと直接接続せずにフェイクデータを使用してテストするため
+npm -D install axios-mock-adapter
+
+時と場合によって必要になりそうなライブラリ
+vutify
+UIフレームワーク
+npm install vutify
+
+pinia-plugin-persistedstate
+ページのリロードでstoreのデータが消えてしまわないよう、storeの状態管理を永続化したい時
+npm install pinia-plugin-persistedstate
+
+Dayjs
+日付フォーマット
+npm install dayjs
+
+vite ホットリロード有効
+vite.configファイルのdefineConfig関数内に以下を追加 
+  server: {
+    watch: { usePolling: true },
+  },
+
+フォルダ構成
+src
+|
+|__assets 画像とかもろもろのフォルダ
+|
+|__commons 　共通で使用するフォルダ helperとかaxiosフォルダとか
+|
+|__components コンポーネントフォルダ
+|
+|__constants 　定数フォルダ
+|
+|__mocks モックフォルダ
+|
+|__router ルーター
+|
+|__service API接続サービスフォルダ ※サービスの中に返却モデルを記載
+|
+|__stores ストアフォルダ
+|
+|__views view画面フォルダ
