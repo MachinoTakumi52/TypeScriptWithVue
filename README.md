@@ -66,7 +66,7 @@ vite `4.3.9`
 >```
 - pinia
 >状態管理をするためのもの  
->ビルドツールでプロジェクト作成時、設定で追加すれば自動でインストールされる　　
+>ビルドツールでプロジェクト作成時、設定で追加すれば自動でインストールされる  
 >詳しくは[pinia](https://pinia.vuejs.org/core-concepts/)の公式サイトへ
 - router
 >ルーティングするためのもの  
@@ -75,14 +75,17 @@ vite `4.3.9`
 
 ## 必要によってインストールすべきライブラリ
 ### 非同期通信ライブラリ axios
+axiosライブラリを使用することでより簡単に非同期通信が可能になる
 ```bash 
 npm install axios
 ```
 ### フロントテストライブラリ mock-adapter
+ユニットテストを行うまでは、mockを使用して擬似データを作成し開発を行う
 ```bash 
 npm -D install axios-mock-adapter
 ```
 ### UIフレームワーク vuetify
+UIがより簡単に構築できる
 ```bash 
 npm install vutify
 ```
@@ -92,6 +95,7 @@ npm install vutify
 npm install pinia-plugin-persistedstate
 ```
 ### 日付フォーマット day.js
+日付のフォーマットを詳細に設定したい時使用
 ```bash 
 npm install dayjs
 ```
@@ -129,6 +133,8 @@ npm i
 
 ### デバック(ホットリロード有効)
 デバックコマンドは以下に記載  
+ホットリロードにより変更保存後、自動で更新される
+コンポーネントの変更は、たまに聞かない時があるのでその時は、`ctr + r`で更新を
 ```bash
 npm run dev
 ```
