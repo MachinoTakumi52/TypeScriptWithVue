@@ -9,9 +9,9 @@ import router from "./router";
 // エラーハンドル
 import { errorHandler } from "@/commons/errorHandler";
 import { createMockAdapter, isMock } from "./stores/mockStore";
-import { sampleServiceMock } from "./mocks/sampleService.Mock";
+import { sampleServiceMock } from "./mocks/sampleServiceMock";
 
-//vuetify関係
+//vuetify関係のインポート
 // import "vuetify/styles";
 // import { createVuetify, type ThemeDefinition } from "vuetify";
 // import * as components from "vuetify/components";
