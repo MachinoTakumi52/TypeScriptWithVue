@@ -1,8 +1,8 @@
 {
-  "name": "node-ts-vue",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "node-ts-vue",
-  "workspaceFolder": "/node-ts-vue",
+  "name": "${localWorkspaceFolderBasename}",
+  "dockerComposeFile": "./docker/docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "settings": {
@@ -26,13 +26,16 @@
         "MS-CEINTL.vscode-language-pack-ja",
         // フォーマッター
         "esbenp.prettier-vscode",
-        // git 以下3つ
+        // git
         "mhutchie.git-graph",
         "donjayamanne.githistory",
         "eamodio.gitlens",
-        // vue 以下2つ
+        // vue
         "Vue.volar",
-        "Vue.vscode-typescript-vue-plugin"
+        "Vue.vscode-typescript-vue-plugin",
+        //Todo Tree
+        "Gruntfuggly.todo-tree"
+        
       ]
     }
   }

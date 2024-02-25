@@ -6,8 +6,10 @@ import router from "./router";
 
 // エラーハンドル
 import { errorHandler } from "@/commons/errorHandler";
-import { createMockAdapter, isMock } from "./stores/mockStore";
 import { sampleServiceMock } from "./mocks/sampleServiceMock";
+import { useMockStore } from "./stores/mock";
+import MockAdapter from "axios-mock-adapter";
+import { httpJson } from "./commons/http";
 
 //vuetify関係
 // import "vuetify/styles";
@@ -66,11 +68,13 @@ app.use(errorHandler);
 //vuetify追加
 // app.use(vuetify);
 
-//mockを使用するかどうか
-if (isMock) {
-  //モックインスタンス生成
-  createMockAdapter();
-  //以下にモックサービスを記載
+//モック
+//インスタンス生成
+///モックを使用するかどうか
+if (import.meta.env.VITE_IS_USED_MOCK === "true") {
+  const mockStore = useMockStore();
+  mockStore.mock = new MockAdapter(httpJson, { delayResponse: 200 });
+  //TODO mockサービスファイルを定義
   sampleServiceMock();
 }
 

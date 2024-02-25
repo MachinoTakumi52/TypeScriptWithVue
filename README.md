@@ -173,3 +173,7 @@ npm i
 ```bash
 npm run dev
 ```
+
+### 開発方法
+
+- interface と type について

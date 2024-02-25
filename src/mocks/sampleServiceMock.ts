@@ -1,4 +1,4 @@
-import { useMockStore } from "@/stores/mockStore";
+import { useMockStore } from "@/stores/mock";
 import type { AxiosRequestConfig } from "axios";
 
 //サンプルサービス
