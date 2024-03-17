@@ -31,11 +31,9 @@
         "donjayamanne.githistory",
         "eamodio.gitlens",
         // vue
-        "Vue.volar",
         "Vue.vscode-typescript-vue-plugin",
         //Todo Tree
         "Gruntfuggly.todo-tree"
-        
       ]
     }
   }

@@ -25,24 +25,24 @@
 
 ### Docker
 
-linux  
-ディストリビューション `debian`
+linux(dedian ベース)  
+`node:20.11-slim`使用
 
 ### 実行環境
 
-node `18.13.0`
+node `20.11.1`
 
 ### 言語
 
-typeScript `5.0.4`
+typeScript `5.3.0`
 
 ### フレームワーク
 
-vue `3.3.4`
+vue `3.5.6`
 
 ### ビルドツール
 
-vite `4.3.9`
+vite `5.0.11`
 
 ## プロジェクト作成について
 
@@ -134,13 +134,15 @@ npm install dayjs
 ```bash
 src
 |
-|__assets 画像とかもろもろのフォルダ
+|__assets 画像とかのフォルダ
 |
-|__commons 　共通で使用するフォルダ helperとかaxiosフォルダとか
+|__commons 　共通で使用するフォルダ helper、axiosファイル、定数ファイルとか
 |
 |__components コンポーネントフォルダ
+|  |
+|  |__common 共通コンポーネント
 |
-|__constants 　定数フォルダ
+|__constants 　
 |
 |__mocks モックフォルダ
 |
@@ -153,7 +155,23 @@ src
 |__views view画面フォルダ
 ```
 
-## 開発に必要なコマンドについて
+## 開発環境立ち上げまでの流れ
+
+### vscode 拡張機能の追加
+
+`Dev Containers`と`Docker`を追加
+
+### env ファイルの設定
+
+`.env`ファイルに`.env.development`ファイルの内容をコピーして貼り付ける
+
+### コンテナを立ち上げる
+
+`コンテナで再度開く`を選択してコンテナを立ち上げる
+vscode 左下をクリックしたら出てくる
+
+または、docker ファイルが存在するディレクトリを vscode で開いた時、右下に`コンテナで開く`が出てくるので選択して
+コンテナを立ち上げる
 
 ### ライブラリのインストール
 
@@ -173,7 +191,3 @@ npm i
 ```bash
 npm run dev
 ```
-
-### 開発方法
-
-- interface と type について
