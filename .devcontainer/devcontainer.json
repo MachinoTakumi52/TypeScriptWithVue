@@ -1,6 +1,6 @@
 {
   "name": "${localWorkspaceFolderBasename}",
-  "dockerComposeFile": "./docker/docker-compose.yml",
+  "dockerComposeFile": "./docker/Compose.yml",
   "service": "app",
   "workspaceFolder": "/workspace",
   "customizations": {
@@ -10,19 +10,19 @@
         "files.eol": "\n",
         // 保存時にフォーマット
         "editor.formatOnSave": true,
-        // フォーマッターをprettierに設定
+        // デフォルトフォーマッターをprettierに設定
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         // prettier設定
         "prettier.printWidth": 200,
-        // jsonはVSCodeのフォーマッターを利用
+        // jsonはvscodeのフォーマッターを利用
         "[jsonc]": {
           "editor.defaultFormatter": "vscode.json-language-features"
         },
-        // typescriptのSDKを現在ディレクトリのに指定
+        // typescriptのSDKは現在ディレクトリのものを指定
         "typescript.tsdk": "node_modules/typescript/lib"
       },
       "extensions": [
-        // VSCode日本語化
+        // vscode日本語化
         "MS-CEINTL.vscode-language-pack-ja",
         // フォーマッター
         "esbenp.prettier-vscode",
@@ -31,9 +31,7 @@
         "donjayamanne.githistory",
         "eamodio.gitlens",
         // vue
-        "Vue.vscode-typescript-vue-plugin",
-        //Todo Tree
-        "Gruntfuggly.todo-tree"
+        "Vue.volar"
       ]
     }
   }
