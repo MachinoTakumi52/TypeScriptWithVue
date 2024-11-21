@@ -26,7 +26,7 @@
 ### Docker
 
 linux(dedian ベース)  
-`node:20.11-slim`使用
+`node:20.14-slim`使用
 
 ### 実行環境
 
