@@ -97,6 +97,32 @@ npm install vutify
 npm install pinia-plugin-persistedstate
 ```
 
+## ライブラリ選定サイト
+### npmjs
+ノードのパッケージの検索が可能  
+基本はここから探すのがベスト  
+https://www.npmjs.com/
+
+
+### npm trends
+ライブラリのトレンドが比較できるサイト  
+ライブラリ選定の時に使える  
+https://npmtrends.com/
+
+
+### packagephobia
+パッケージのサイズを確認できる  
+https://packagephobia.com/
+
+
+### npmgraph
+パッケージの依存関係をみれる  
+https://npmgraph.js.org/
+
+### cdn.js
+jsのcdnについて検索できる  
+https://cdnjs.com/
+
 ## フォルダ構成
 
 ```bash
