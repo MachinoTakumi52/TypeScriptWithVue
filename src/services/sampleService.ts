@@ -1,5 +1,5 @@
 import { type AxiosRequestConfig, type AxiosResponse } from "axios";
-import { httpJson } from "@/commons/http";
+import { httpJson } from "@/utils/http";
 
 /**
  * サンプルデータ取得

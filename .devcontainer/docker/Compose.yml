@@ -1,0 +1,14 @@
+name: typescript-node-vue
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../../:/workspace:cached
+      - node_modules:/workspace/node_modules
+    tty: true
+
+volumes:
+    node_modules:

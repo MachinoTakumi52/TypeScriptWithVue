@@ -6,5 +6,9 @@ const quantityText = ref<number | null>(1);
 <template>
   <div>
     <sampleComponent v-model="quantityText"></sampleComponent>
+    <sampleComponent v-model="quantityText"></sampleComponent>
+    <sampleComponent v-model="quantityText"></sampleComponent>
+    <sampleComponent v-model="quantityText"></sampleComponent>
+    <sampleComponent v-model="quantityText"></sampleComponent>
   </div>
 </template>
