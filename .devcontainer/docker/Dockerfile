@@ -1,4 +1,4 @@
-# debianベース
+# debianベース Node設定
 FROM node:20.14-bookworm-slim
 
 # timezone
