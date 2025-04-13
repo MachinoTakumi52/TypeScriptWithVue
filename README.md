@@ -1,69 +1,51 @@
 # vue(TypeScript)開発にあたって
-## 開発環境
-
-### DockerImage
-
-linux(dedian ベース)：`node:22.12.0-bookworm-slim`
-
-### 実行環境
-
-node：`22.12.0`
-
-### 言語
-
-typeScript：`5.6.3`
-
-### フレームワーク
-
-vue：`3.5.13`
-
-### ビルドツール
-
-vite：`6.0.5`
 
 ## プロジェクト作成について
 
-開発がすぐに始められるように必要最低限のものはインストール済み。  
-TODO:フォルダ構造作成までやってあげる(shellバッチで)
-### 必要最低限インストールしたものについて
+### Node version 設定
 
-- コマンドラインツールを使用してプロジェクトを作成  
-  プロジェクト作成コマンド
+devcontainer → docker → Dockerfile 内「debian ベース Node 設定」に使用したいバージョンを設定しコンテナを起動
 
-  ```bash
-  npm init vue@3
-  ```
+```Dockerfile
+  # debianベース Node設定
+  FROM node:20.14-bookworm-slim
+```
 
-  上記のコマンド実行後、CLI で以下のようにプロジェクトの設定を行う
+### シェル実行
 
-   ```bash
-   ---プロジェクト名の設定---
-   Project name: … projectName
-   ---TypeScriptを使用するか---
-   ✔ Add TypeScript? … Yes
-   ---JSXを使用するか---
-   ✔ Add JSX Support? …  Yes
-   ---ルーターを使用するか---
-   ✔ Add Vue Router for Single Page Application development? … Yes
-   ---piniaを使用すか---
-   ✔ Add Pinia for state management? …  Yes
-   ---ユニットテストを使用するか---
-   ✔ Add Vitest for Unit Testing? … No
-   ---E2Eテスト(システム全体を通したテスト)を使用するか---
-   ✔ Add an End-to-End Testing Solution? › No
-   ---EsLinst(静的解析ツール)を使用するか---
-   ✔ Add ESLint for code quality? … No
-   ```
-- pinia  
-  状態管理をするためのもの  
-  ビルドツールでプロジェクト作成時、設定で追加すれば自動でインストールされる  
-  詳しくは[pinia](https://pinia.vuejs.org/core-concepts/)の公式サイトへ
-- router  
-  ルーティングするためのもの  
-  ビルドツールでプロジェクト作成時、設定で追加すれば自動でインストールされる  
-  詳しくは[vue](https://router.vuejs.org/guide/)の公式サイトへ
+ターミナルを開き、bash から下記コマンドを実行
+
+```sh
+/workspace/.createProject/newVueSolution.sh
+```
+
+※実行権限がなく実行できない時は、以下のコマンドを実行
+
+```sh
+chmod +x /workspace/.createProject/newVueSolution.sh
+```
+
+### ウィンドの再読み込み
+
+下記のショートカットからコマンドパレットを開き「reload Window」を入力し「開発者：ウィンドウの再読み込み」を選択
+
+```
+ctrl + shift + P
+```
 
 ## インストールライブラリ
+
+### 状態管理ライブラリ `pinia`
+
+状態管理をするためのもの  
+ ビルドツールでプロジェクト作成時、設定で追加すれば自動でインストールされる  
+ 詳しくは[pinia](https://pinia.vuejs.org/core-concepts/)の公式サイトへ
+
+### ルーティングライブラリ `router`
+
+ルーティングするためのもの  
+ ビルドツールでプロジェクト作成時、設定で追加すれば自動でインストールされる  
+ 詳しくは[vue](https://router.vuejs.org/guide/)の公式サイトへ
 
 ### 非同期通信ライブラリ `axios`
 
@@ -98,29 +80,32 @@ npm install pinia-plugin-persistedstate
 ```
 
 ## ライブラリ選定サイト
+
 ### npmjs
+
 ノードのパッケージの検索が可能  
 基本はここから探すのがベスト  
 https://www.npmjs.com/
 
-
 ### npm trends
+
 ライブラリのトレンドが比較できるサイト  
 ライブラリ選定の時に使える  
 https://npmtrends.com/
 
-
 ### packagephobia
+
 パッケージのサイズを確認できる  
 https://packagephobia.com/
 
-
 ### npmgraph
+
 パッケージの依存関係をみれる  
 https://npmgraph.js.org/
 
 ### cdn.js
-jsのcdnについて検索できる  
+
+js の cdn について検索できる  
 https://cdnjs.com/
 
 ## フォルダ構成
@@ -154,7 +139,9 @@ src
 |
 |__types 型定義フォルダ
 ```
+
 ## 開発のいろは
+
 ### 開発ルール
 
 開発ルールは、[フロントエンドコーディング規約](https://zenn.dev/takumi_machino/articles/typescript-vue-vuetify)を参照。
@@ -162,7 +149,8 @@ src
 ## 開発からデプロイまでの流れ
 
 ### コンテナを立ち上げる
-vscodeでプロジェクトを開く  
+
+vscode でプロジェクトを開く  
 `コンテナで再度開く`を選択してコンテナを立ち上げる
 vscode 左下をクリックしたら出てくる
 
@@ -191,8 +179,10 @@ npm run dev
 ```
 
 ### デプロイ
+
 下記コマンドでビルド。  
 `dist`フォルダにファイルが生成されるためこれをプラットフォームに配置。
+
 ```bash
 npm run build
 ```
