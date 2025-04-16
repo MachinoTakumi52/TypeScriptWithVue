@@ -28,11 +28,11 @@ app.use(vuetify);
 
 //モック
 //インスタンス生成
-///モックを使用するかどうか
+//モックを使用するかどうか
 // if (import.meta.env.VITE_IS_USED_MOCK === true) {
 //   const mockStore = useMockStore();
 //   mockStore.mock = new MockAdapter(httpJson, { delayResponse: 200 });
-//   //TODO mockサービスファイルを定義
+     // mockサービスファイルを定義
 //   sampleServiceMock();
 // }
 
