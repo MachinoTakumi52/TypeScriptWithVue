@@ -8,7 +8,7 @@ devcontainer → docker → Dockerfile 内「debian ベース Node 設定」に�
 
 ```Dockerfile
   # debianベース Node設定
-  FROM node:20.14-bookworm-slim
+  FROM node:22.14-bookworm-slim
 ```
 
 ### シェル実行
@@ -23,6 +23,51 @@ devcontainer → docker → Dockerfile 内「debian ベース Node 設定」に�
 
 ```sh
 chmod +x /workspace/.createProject/newVueSolution.sh
+```
+
+シェル実行後、プロジェクトの名前を聞かれるので入力
+
+```sh
+プロジェクトの名前を教えてください
+プロジェクト名:
+```
+
+インストールするパッケージが聞かれるため`TypeScript`、`Router`、`Pinia`を選択
+
+```sh
+┌  Vue.js - The Progressive JavaScript Framework
+│
+◆  Select features to include in your project: (↑/↓ to navigate, space to select, a to toggle all, enter to confirm)
+│  ◼ TypeScript
+│  ◻ JSX Support
+│  ◼ Router (SPA development)
+│  ◼ Pinia (state management)
+│  ◻ Vitest (unit testing)
+│  ◻ End-to-End Testing
+│  ◻ ESLint (error prevention)
+│  ◻ Prettier (code formatting)
+└
+```
+
+http 通信を使用する場合は、`y`を選択
+
+```sh
+axiosを使用しますか？(y/n)
+y/n: y
+```
+
+mock を使用する場合は、`y`を選択
+
+```sh
+mockを使用しますか？(y/n)
+y/n: y
+```
+
+vuetify を入れる場合は、`y`を選択
+
+```sh
+vuetifyを使用しますか？(y/n)
+y/n: y
 ```
 
 ### ウィンドの再読み込み
