@@ -1,24 +1,12 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
-import { getData, insertData, type resultModel } from "@/services/sampleService";
+import { ref } from "vue";
 
-const items = ref<resultModel[]>();
-
-const isRegist = ref<boolean>();
-
-onMounted(async () => {
-  /**データ取得 */
-  items.value = await getData(null);
-
-  /**データ登録 */
-  isRegist.value = await insertData(1);
-});
+const items = ref<number[]>([1, 2, 3, 4, 5]);
 </script>
 <template>
   <div class="sampleStyle">
     <div>home</div>
-    <div v-for="item in items" :key="item.id">{{ item.name }}</div>
-    <div>{{ isRegist }}</div>
+    <div v-for="item in items" :key="item">{{ item }}</div>
   </div>
 </template>
 
