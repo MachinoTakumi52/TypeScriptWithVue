@@ -4,14 +4,14 @@ import { createPersistedState } from "pinia-plugin-persistedstate";
 
 import App from "./App.vue";
 import router from "./router";
-import vuetify from "@/vuetify/index";
+// import vuetify from "@/vuetify/index";
 
 // エラーハンドル
 import { errorHandler } from "@/utils/errorHandler";
-import { sampleServiceMock } from "./mocks/sampleServiceMock";
-import { useMockStore } from "./stores/mock";
-import MockAdapter from "axios-mock-adapter";
-import { httpJson } from "./utils/http";
+// import { sampleServiceMock } from "./mocks/sampleServiceMock";
+// import { useMockStore } from "./stores/mock";
+// import MockAdapter from "axios-mock-adapter";
+// import { httpJson } from "./utils/http";
 
 const app = createApp(App);
 //pinia追加
@@ -24,7 +24,7 @@ app.use(router);
 //共通エラーハンドリング追加
 app.use(errorHandler);
 //vuetify追加
-app.use(vuetify);
+// app.use(vuetify);
 
 //モック
 //インスタンス生成
@@ -32,7 +32,7 @@ app.use(vuetify);
 // if (import.meta.env.VITE_IS_USED_MOCK === true) {
 //   const mockStore = useMockStore();
 //   mockStore.mock = new MockAdapter(httpJson, { delayResponse: 200 });
-     // mockサービスファイルを定義
+// mockサービスファイルを定義
 //   sampleServiceMock();
 // }
 

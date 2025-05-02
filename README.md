@@ -32,7 +32,7 @@ chmod +x /workspace/.createProject/newVueSolution.sh
 プロジェクト名:
 ```
 
-インストールするパッケージが聞かれるため`TypeScript`、`Router`、`Pinia`を選択
+インストールするパッケージが聞かれるため`TypeScript`、`Router`、`Pinia`を選択(スペースキーで選択。エンターキーで次へ)
 
 ```sh
 ┌  Vue.js - The Progressive JavaScript Framework

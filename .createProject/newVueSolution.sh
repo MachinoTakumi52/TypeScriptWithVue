@@ -59,6 +59,7 @@ fi
 PROJECT_SRC_DIR="/$PROJECT_DIR/src"
 
 # いらないファイルの削除
+rm -rf "/$PROJECT_DIR"/.vscode/*
 rm -rf "$PROJECT_SRC_DIR"/assets/*
 rm -rf "$PROJECT_SRC_DIR"/components/*
 rm -rf "$PROJECT_SRC_DIR"/router/*
@@ -77,9 +78,6 @@ cp "$TEMPLATE_DIR"/global.ts "$PROJECT_SRC_DIR"/stores/
 # サンプルファイルの作成 views
 cp "$TEMPLATE_DIR"/Home.vue "$PROJECT_SRC_DIR"/views/
 cp "$TEMPLATE_DIR"/Sample.vue "$PROJECT_SRC_DIR"/views/
-# サンプルファイルの作成 services
-mkdir "$PROJECT_SRC_DIR"/services
-cp "$TEMPLATE_DIR"/sampleService.ts "$PROJECT_SRC_DIR"/services/
 # サンプルファイルの作成 utils
 mkdir "$PROJECT_SRC_DIR"/utils
 cp "$TEMPLATE_DIR"/errorHandler.ts "$PROJECT_SRC_DIR"/utils/
@@ -92,13 +90,16 @@ cp "$TEMPLATE_DIR"/App.vue "$PROJECT_SRC_DIR"/
 if [ "$USE_AXIOS" = "y" ]; then
     # サンプルファイルの作成 http通信
     cp "$TEMPLATE_DIR"/http.ts "$PROJECT_SRC_DIR"/utils/
+    # サンプルファイルの作成 services
+    mkdir "$PROJECT_SRC_DIR"/services
+    cp "$TEMPLATE_DIR"/sampleService.ts "$PROJECT_SRC_DIR"/services/
+    sed -i 's|// import { httpJson } from "./utils/http";|import { httpJson } from "./utils/http";|' "$PROJECT_SRC_DIR/main.ts"
     
     # サンプルファイルの作成 mocks
     if [ "$USE_MOCK" = "y" ]; then
         cp "$TEMPLATE_DIR"/mock.ts "$PROJECT_SRC_DIR"/stores/
         mkdir "$PROJECT_SRC_DIR"/mocks
         cp "$TEMPLATE_DIR"/sampleServiceMock.ts "$PROJECT_SRC_DIR"/mocks/
-        sed -i 's|// import { httpJson } from "./utils/http";|import { httpJson } from "./utils/http";|' "$PROJECT_SRC_DIR/main.ts"
         sed -i 's|// import { sampleServiceMock } from "./mocks/sampleServiceMock";|import { sampleServiceMock } from "./mocks/sampleServiceMock";|' "$PROJECT_SRC_DIR/main.ts"
         sed -i 's|// import { useMockStore } from "./stores/mock";|import { useMockStore } from "./stores/mock";|' "$PROJECT_SRC_DIR/main.ts"
         sed -i 's|// import MockAdapter from "axios-mock-adapter";|import MockAdapter from "axios-mock-adapter";|' "$PROJECT_SRC_DIR/main.ts"
