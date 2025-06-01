@@ -93,13 +93,13 @@ if [ "$USE_AXIOS" = "y" ]; then
     # サンプルファイルの作成 services
     mkdir "$PROJECT_SRC_DIR"/services
     cp "$TEMPLATE_DIR"/sampleService.ts "$PROJECT_SRC_DIR"/services/
-    sed -i 's|// import { httpJson } from "./utils/http";|import { httpJson } from "./utils/http";|' "$PROJECT_SRC_DIR/main.ts"
     
     # サンプルファイルの作成 mocks
     if [ "$USE_MOCK" = "y" ]; then
         cp "$TEMPLATE_DIR"/mock.ts "$PROJECT_SRC_DIR"/stores/
         mkdir "$PROJECT_SRC_DIR"/mocks
         cp "$TEMPLATE_DIR"/sampleServiceMock.ts "$PROJECT_SRC_DIR"/mocks/
+        sed -i 's|// import { httpJson } from "./utils/http";|import { httpJson } from "./utils/http";|' "$PROJECT_SRC_DIR/main.ts"
         sed -i 's|// import { sampleServiceMock } from "./mocks/sampleServiceMock";|import { sampleServiceMock } from "./mocks/sampleServiceMock";|' "$PROJECT_SRC_DIR/main.ts"
         sed -i 's|// import { useMockStore } from "./stores/mock";|import { useMockStore } from "./stores/mock";|' "$PROJECT_SRC_DIR/main.ts"
         sed -i 's|// import MockAdapter from "axios-mock-adapter";|import MockAdapter from "axios-mock-adapter";|' "$PROJECT_SRC_DIR/main.ts"
@@ -122,6 +122,13 @@ fi
 cp "$TEMPLATE_DIR"/.env.development "$PROJECT_SRC_DIR"/
 cp "$TEMPLATE_DIR"/.env.release "$PROJECT_SRC_DIR"/
 cp "$TEMPLATE_DIR"/env.d.ts "$PROJECT_SRC_DIR"/
+
+# viteファイルに設定を追加 vite.config.ts
+sed -i '/  resolve: {/i\
+  server: {\
+    watch: { usePolling: true },\
+    host: true,\
+  },' "$PROJECT_DIR"/vite.config.ts
 
 echo "プロジェクトの作成が完了しました"
 echo "------------------------------------"
